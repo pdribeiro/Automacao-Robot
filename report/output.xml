@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-23T22:00:12.622986" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste3" source="C:\Users\PICHAU\Documents\Projetos\robot\teste3.robot">
+<test id="s1-t1" name="Cenário 1: Acessando o site do Robot" line="54">
+<kw name="Abrir Site">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-23T22:00:12.776669" level="INFO">Opening browser 'chrome' to base url 'https://automationpratice.com.br/'.</msg>
+<arg>${SITE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-23T22:00:12.776494" elapsed="1.523209"/>
+</kw>
+<kw name="Esperar Elemento">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${tempo}s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-01-23T22:00:14.300269" elapsed="0.000886"/>
+</kw>
+<arg>10</arg>
+<status status="PASS" start="2025-01-23T22:00:14.299992" elapsed="0.001232"/>
+</kw>
+<status status="PASS" start="2025-01-23T22:00:12.776007" elapsed="1.525263"/>
+</kw>
+<kw name="Clicar em Link de Login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T22:00:14.301991" level="INFO">Clicking element 'xpath://a[@href='/login']'.</msg>
+<arg>xpath://a[@href='/login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T22:00:14.301708" elapsed="0.398282"/>
+</kw>
+<status status="PASS" start="2025-01-23T22:00:14.301527" elapsed="0.398603"/>
+</kw>
+<kw name="Preencher Campo de E-mail">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T22:00:14.701054" level="INFO">Typing text 'qazando@teste.com' into text field 'id:user'.</msg>
+<arg>id:user</arg>
+<arg>${USUARIO_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T22:00:14.700757" elapsed="1.610884"/>
+</kw>
+<status status="PASS" start="2025-01-23T22:00:14.700445" elapsed="1.611316"/>
+</kw>
+<kw name="Preencher Campo de Senha">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T22:00:16.312486" level="INFO">Typing text '123456' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${USUARIO_SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T22:00:16.312307" elapsed="0.044509"/>
+</kw>
+<status status="PASS" start="2025-01-23T22:00:16.312062" elapsed="0.044858"/>
+</kw>
+<kw name="Clicar em Botão de Login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T22:00:16.357568" level="INFO">Clicking element 'id:btnLogin'.</msg>
+<arg>id:btnLogin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T22:00:16.357420" elapsed="0.048111"/>
+</kw>
+<status status="PASS" start="2025-01-23T22:00:16.357182" elapsed="0.048456"/>
+</kw>
+<kw name="Verificar texto login realizado">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T22:00:16.421804" level="INFO">${texto_atual} = Login realizado</msg>
+<var>${texto_atual}</var>
+<arg>id:swal2-title</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T22:00:16.406169" elapsed="0.015677"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>Login realizado</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-01-23T22:00:16.421990" elapsed="0.000169"/>
+</kw>
+<status status="PASS" start="2025-01-23T22:00:16.405921" elapsed="0.016296"/>
+</kw>
+<tag>Teste1</tag>
+<status status="PASS" start="2025-01-23T22:00:12.775391" elapsed="3.647013"/>
+</test>
+<status status="PASS" start="2025-01-23T22:00:12.624098" elapsed="3.799004"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Teste1</stat>
+</tag>
+<suite>
+<stat name="Teste3" id="s1" pass="1" fail="0" skip="0">Teste3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

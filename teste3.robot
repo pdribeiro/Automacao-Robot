@@ -15,6 +15,8 @@ Abrir Site Herbert
 
 Abrir Site
     Open Browser  ${SITE_URL}  chrome
+    Esperar Elemento  10
+
 
 Abrir esse site
     [Arguments]  ${url}
@@ -39,41 +41,22 @@ Verificar texto login realizado
     ${texto_atual}  Get Text  id:swal2-title
     Should Be Equal As Strings  ${texto_atual}  Login realizado
 
+Tirar Print
+    Capture Page Screenshot
+
+Esperar Elemento
+    [Arguments]    ${tempo}
+
+    Set Selenium Implicit Wait    ${tempo}s
+
 *** Test Cases ***
 
 Cenário 1: Acessando o site do Robot
 
     [Tags]  Teste1
     Abrir Site
-    Esperar Página Carregar
     Clicar em Link de Login
-    Esperar Página Carregar
     Preencher Campo de E-mail
     Preencher Campo de Senha
     Clicar em Botão de Login
-    Esperar Página Carregar
-    Verificar texto login realizado
-
-Cenário 2: Testando Robot
-    [Tags]  Teste3
-    Abrir Site
-    Esperar Página Carregar
-    Clicar em Link de Login
-    Esperar Página Carregar
-    Preencher Campo de E-mail
-    Preencher Campo de Senha
-    Clicar em Botão de Login
-    Esperar Página Carregar
-    Verificar texto login realizado
-
-Cenário 3: Testando valor no teste
-    [Tags]  Teste3
-    Abrir esse site  https://automationpratice.com.br/  
-    Esperar Página Carregar
-    Clicar em Link de Login
-    Esperar Página Carregar
-    Preencher Campo de E-mail
-    Preencher Campo de Senha
-    Clicar em Botão de Login
-    Esperar Página Carregar
     Verificar texto login realizado
